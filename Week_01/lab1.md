@@ -1,6 +1,7 @@
 ## Due Thursday 4/8:
 
 1. Calculate a new field using already existing fields in the `CA_Counties_2019.shp` dataset or another dataset of your choosing.
+
 2. Create a geojson named `lab1.geojson` and add it to your repository.
 
 3. Create a new markdown file called `lab1.md` and explain the following:
