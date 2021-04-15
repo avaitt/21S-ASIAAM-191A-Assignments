@@ -7,6 +7,14 @@
 
         <!-- I'd add some style if here if I had any -->
         <link rel="stylesheet" href="style/style.css">
+        
+        <style>
+
+        </style>
+        <script>
+
+        </script>
+
 
         <!-- Leaflet's css-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -14,42 +22,51 @@
         <!-- Leaflet's JavaScript-->
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
+
     </head>
     
     <body>
         <header>
-            Helloooooooooooo!
+              
         </header>
-        
         <div class="main">
+            <h1>
+                Hi, My Name is Adhvaith Vijay!
+            </h1>
+            
+            <p>
+                I am a Junior at UCLA studying Statistics. I am a transfer student so I've only been here a year, but entering UCLA has been one of the best decision of my life.
+                Even though everything is online because of COVID-19, I can't say how lucky I am to spend my days interesting and smart people. After I finish my Bachelors, I intend
+                on going to graduate school and want to specialize in Statistics/Data Science. One of my goals as a Data Scientist is to convey information to the general public that is
+                both aesthetically pleasing, informative, and ethically sourced.          
+            </p>
+            <img src="AdhvaithV_profilepic.jpg " />
+            <p>I love watching Netflix dramas in my free time. Here are some especially interesting movies/shows I've been sucked into:</p>
+            <ul>
+                <li><a href="https://www.netflix.com/title/81004164">Shtisel</a></li>
+                <li><a href="https://www.netflix.com/title/70302007">TURN</a></li>
+                <li><a href="https://www.netflix.com/title/80211648">The Last Czars</a></li>
+              </ul>
+              <h2>
+                Meaningful Places:
+            </h2>
+              <ol>
+                <li>San Diego, CA (Birthplace)</li>
+                <li>UCLA (Dream School)Home: </li>
+                <li>Bengaluru, India (Ancestral Home)</li>
+            </ol>
         <!-- hint: majority of your lab assignment can go here     -->
-        
-        </div><div id="map"></map></div>
+        </div>   
+    
+        <div id = "map"> </div>
+
 
         <div id="footer">
-Copyright(2021)
+            Copyright(2021)
         </div>
         
     </body>
+
     <script src="./js/init.js"></script> 
 
-    <script>
-
-        fetch("js/lab1.geojson")
-            .then(response => {
-                return response.json();
-            })
-            .then(data =>{
-                // Basic Leaflet method to add GeoJSON data
-                L.geoJSON(data).addTo(map)
-            });
-        // the leaflet method for adding a geojson
-        L.geoJSON(data, {
-            style: function (feature) {
-                return {color: 'red'};
-            }
-        }).bindPopup(function (layer) {
-            return layer.feature.properties.name;
-        }).addTo(map);
-    </script>
 </html>
