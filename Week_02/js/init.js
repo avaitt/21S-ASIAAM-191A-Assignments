@@ -1,8 +1,3 @@
-
-// JavaScript const variable declaration
-const map = L.map('map').setView([34.0709, -118.444],2);
-
-
 // Leaflet tile layer, i.e. the base map
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
