@@ -14,7 +14,7 @@ let marker = L.marker([34.0689, -118.445]).addTo(map)
 let marker1 = L.marker([32.7157, -117.1611]).addTo(map)
 		.bindPopup('San Diego')
 		.openPopup();
-let marker2 = L.marker([12.9716, -77.5946]).addTo(map)
+let marker2 = L.marker([12.9716, 77.5946]).addTo(map)
 		.bindPopup('Bengaluru')
 		.openPopup();
 
