@@ -1,0 +1,2 @@
+{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"Place":"San Diego"},"geometry":{"type":"Point","coordinates":[32.7157, -117.1611]}},{"type":"Feature","properties":{"Place":"UCLA"},"geometry":{"type":"Point","coordinates":[34.0689, -118.445]}},
+{"type":"Feature","properties":{"Place":"Bengaluru"},"geometry":{"type":"Point","coordinates":[12.9716, -77.5946]}}]}
