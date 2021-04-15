@@ -20,17 +20,17 @@ let marker2 = L.marker([12.9716, -77.5946]).addTo(map)
 		.openPopup();
 
 
-fetch("js/map.geojson")
-		.then(response => {
-			return response.json();
-			})
-	.then(data =>{
+// fetch("js/map.geojson")
+// 		.then(response => {
+// 			return response.json();
+// 			})
+// 	.then(data =>{
 
-			L.geoJSON(data, {
-				style: function (feature) {
-					return {color: feature.properties.color};
-					}
-			}).bindPopup(function (layer) {
-					return layer.feature.properties.Place;
-			}).addTo(map);
-		});
+// 			L.geoJSON(data, {
+// 				style: function (feature) {
+// 					return {color: feature.properties.color};
+// 					}
+// 			}).bindPopup(function (layer) {
+// 					return layer.feature.properties.Place;
+// 			}).addTo(map);
+// 		});
