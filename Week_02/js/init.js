@@ -1,3 +1,4 @@
+
 // Leaflet tile layer, i.e. the base map
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -15,17 +16,17 @@ let marker2 = L.marker([12.9716, -77.5946]).addTo(map)
 		.openPopup();
 
 
-// fetch("js/map.geojson")
-// 		.then(response => {
-// 			return response.json();
-// 			})
-// 	.then(data =>{
+fetch("js/map.geojson")
+		.then(response => {
+			return response.json();
+			})
+	.then(data =>{
 
-// 			L.geoJSON(data, {
-// 				style: function (feature) {
-// 					return {color: feature.properties.color};
-// 					}
-// 			}).bindPopup(function (layer) {
-// 					return layer.feature.properties.Place;
-// 			}).addTo(map);
-// 		});
+			L.geoJSON(data, {
+				style: function (feature) {
+					return {color: feature.properties.color};
+					}
+			}).bindPopup(function (layer) {
+					return layer.feature.properties.Place;
+			}).addTo(map);
+		});
