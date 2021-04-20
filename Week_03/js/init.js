@@ -19,16 +19,18 @@ var greenIcon = new L.Icon({
   });
 
 // create a function to add markers
-function addMarker(lat,lng,title,message){
+function addMarker(lat,lng,title,message, center=false, zoom_in = 8){
     console.log(message)
-    L.marker([lat,lng], {icon:greenIcon}).addTo(map).bindPopup(`<h2>${title}</h2>`)
-    createButtons(lat,lng,title); // new line!!!
+    if (!center){
+        L.marker([lat,lng], {icon:greenIcon}).addTo(map).bindPopup(`<h2>${title}</h2>`)
+    }
+    createButtons(lat,lng,title,zoom_in); // new line!!!
     return message
 }
 
 
 // create a function to add buttons with a fly to command
-function createButtons(lat,lng,title){
+function createButtons(lat,lng,title,zoom_in){
     const newButton = document.createElement("button"); // adds a new button
     newButton.id = "button"+title; // gives the button a unique id
     newButton.src = "http://www.gravatar.com/avatar/bf4cc94221382810233575862875e687?s=150"
@@ -38,7 +40,7 @@ function createButtons(lat,lng,title){
 
     // attach an event listner to the button with Leaflet's map.flyTo
     newButton.addEventListener('click', function(){
-        map.flyTo([lat,lng], 10);
+        map.flyTo([lat,lng], zoom_in);
     })
     document.body.appendChild(newButton); //this adds the button to our page.
 }
@@ -47,4 +49,6 @@ function createButtons(lat,lng,title){
 addMarker(12.9716, 77.5946, 'Bangalore, India','Where My Family Is')
 addMarker(34.0689,-118.4452, 'UCLA','My Favorite Place In The World!')
 addMarker(27.9881, 86.9250, 'Mt. Everest','A Mountain I Want to Climb')
+addMarker(40.4637, 3.7492, 'Recenter Map','Click This Button to Recenter Map', true, 2.45)
+
 
