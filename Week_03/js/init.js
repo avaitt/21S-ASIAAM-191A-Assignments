@@ -38,7 +38,7 @@ function createButtons(lat,lng,title){
 
     // attach an event listner to the button with Leaflet's map.flyTo
     newButton.addEventListener('click', function(){
-        map.flyTo([lat,lng], 8);
+        map.flyTo([lat,lng], 10);
     })
     document.body.appendChild(newButton); //this adds the button to our page.
 }
