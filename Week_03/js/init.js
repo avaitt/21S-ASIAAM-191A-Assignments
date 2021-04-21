@@ -1,6 +1,6 @@
 // declare variables
-let zoomLevel = 2.45;
-const mapCenter = [40.4637, 3.7492];
+let zoomLevel = 4.4;
+const mapCenter = [37.0902, -95.7129];
 
 // use the variables
 const map = L.map('map').setView(mapCenter, zoomLevel);
@@ -42,13 +42,32 @@ function createButtons(lat,lng,title,zoom_in){
     newButton.addEventListener('click', function(){
         map.flyTo([lat,lng], zoom_in);
     })
-    document.body.appendChild(newButton); //this adds the button to our page.
+
+    document.body.prepend(newButton); //this adds the button to our page.
+
+    newButton.addEventListener('click', function(){
+        addImage(lat,lng,title);
+    })
+}
+
+function addImage(lat, lng, title){
+    switch(title){
+        case 'Los Angeles, CA': img = './pictures/UCLA.jpg';
+            break;
+        case 'West Lafayette, IN': img = './pictures/Purdue.jpg';
+            break;
+        case 'Houston, TX': img = './pictures/Houston.jpg';
+            break;
+    }
+    if (title != 'Recenter Map') {
+        L.popup().setLatLng([lat, lng]).setContent('<img src=' + img + ' width=105 height=105/><p>' + title +'</p>').openOn(map);
+    }
 }
 
 // use our marker functions
-addMarker(12.9716, 77.5946, 'Bangalore, India','Where My Family Is')
-addMarker(34.0689,-118.4452, 'UCLA','My Favorite Place In The World!')
-addMarker(27.9881, 86.9250, 'Mt. Everest','A Mountain I Want to Climb')
-addMarker(40.4637, 3.7492, 'Recenter Map','Click This Button to Recenter Map', true, 2.45)
+addMarker(34.0522, -118.2437, 'Los Angeles, CA','Home of the Bruins!')
+addMarker(40.4259, -86.9081, 'West Lafayette, IN','Good Memories')
+addMarker(29.7604, -95.3698, 'Houston, TX','Good Memories')
+addMarker(37.0902, -95.7129, 'Recenter Map','Click This Button to Recenter Map', true, 4.4)
 
 
