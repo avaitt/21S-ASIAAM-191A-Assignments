@@ -11,12 +11,12 @@ fetch(url)
 		return response.json();
 		})
     .then(data =>{
-        console.log(data)
+        //console.log(data)
         processData(data)
     })
 
 function addMarker(data){
-        L.marker([data.lat,data.lng]).addTo(map).bindPopup(`<h2>${data.location}</h2>`)
+        L.marker([data.lat,data.lng]).addTo(map).bindPopup(`<h2>${"Location: " + data.location}<br>${"Timestamp: " + data.timestamp}</h2>${"Speak English: " + data.doyouspeakenglishfluently}`)
         return data.timestamp    
 }
 
