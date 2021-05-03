@@ -42,8 +42,7 @@ function callme(){
   });
   }
 
-setInterval(callme, 200);
-// callme();
+callme();
 
 function addMarker(data){
         L.marker([data.lat,data.lng]).addTo(map).bindPopup(`<h2>${"Location: " + data.location}<br>${"Timestamp: " + data.timestamp}</h2>${"Speak English: " + data.doyouspeakenglishfluently}`)
