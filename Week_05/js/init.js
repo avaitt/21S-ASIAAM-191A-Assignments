@@ -31,7 +31,7 @@ function callme(){
   //This promise will resolve when 2 seconds have passed
   var timeOutPromise = new Promise(function(resolve, reject) {
     // 2 Second delay
-    setTimeout(resolve, 2000, 'Timeout Done');
+    setTimeout(resolve, 100, 'Timeout Done');
   });
   
   Promise.all(
