@@ -6,14 +6,44 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 let url = "https://spreadsheets.google.com/feeds/list/1o7FEswz5qC5X6Vk55jigcXMstPKnwCbmH3NG3kU0E2Y/ogvxvqr/public/values?alt=json"
-fetch(url)
-	.then(response => {
-		return response.json();
-		})
+// fetch(url)
+// 	.then(response => {
+// 		return response.json();
+// 		})
+//     .then(data =>{
+//         //console.log(data)
+//         processData(data);
+//     })
+
+function callme(){
+  //This promise will resolve when the network call succeeds
+  //Feel free to make a REST fetch using promises and assign it to networkPromise
+  var networkPromise = fetch(url)
+  .then(response => {
+    return response.json();
+    })
     .then(data =>{
         //console.log(data)
-        processData(data)
-    })
+        processData(data);
+    });
+  
+  
+  //This promise will resolve when 2 seconds have passed
+  var timeOutPromise = new Promise(function(resolve, reject) {
+    // 2 Second delay
+    setTimeout(resolve, 2000, 'Timeout Done');
+  });
+  
+  Promise.all(
+  [networkPromise, timeOutPromise]).then(function(values) {
+    console.log("Atleast 2 secs + TTL (Network/server)");
+    //Repeat
+    callme();
+  });
+  }
+
+setInterval(callme, 200);
+// callme();
 
 function addMarker(data){
         L.marker([data.lat,data.lng]).addTo(map).bindPopup(`<h2>${"Location: " + data.location}<br>${"Timestamp: " + data.timestamp}</h2>${"Speak English: " + data.doyouspeakenglishfluently}`)
@@ -52,6 +82,7 @@ function processData(theData){
     // we can actually add functions here too
     formattedData.forEach(addMarker)
 }
+
 
 // fetch(url)
 // 	.then(response => {
