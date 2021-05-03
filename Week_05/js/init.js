@@ -28,15 +28,15 @@ function callme(){
     });
   
   
-  //This promise will resolve when 2 seconds have passed
+  //This promise will resolve when 1 seconds have passed
   var timeOutPromise = new Promise(function(resolve, reject) {
-    // 2 Second delay
-    setTimeout(resolve, 100, 'Timeout Done');
+    // 1 Second delay
+    setTimeout(resolve, 1000, 'Timeout Done');
   });
   
   Promise.all(
   [networkPromise, timeOutPromise]).then(function(values) {
-    console.log("Atleast 2 secs + TTL (Network/server)");
+    console.log("Atleast 1 secs + TTL (Network/server)");
     //Repeat
     callme();
   });
