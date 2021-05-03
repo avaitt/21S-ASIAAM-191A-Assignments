@@ -31,6 +31,7 @@ function addMarker(data){
 //         return data.message;
 // }  
 
+
 function processData(theData){
     const formattedData = [] /* this array will eventually be populated with the contents of the spreadsheet's rows */
     const rows = theData.feed.entry // this is the weird Google Sheet API format we will be removing
