@@ -4,16 +4,17 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-
 let url = "https://spreadsheets.google.com/feeds/list/1o7FEswz5qC5X6Vk55jigcXMstPKnwCbmH3NG3kU0E2Y/ogvxvqr/public/values?alt=json"
+
 // fetch(url)
 // 	.then(response => {
 // 		return response.json();
 // 		})
 //     .then(data =>{
 //         //console.log(data)
-//         processData(data);
+//         processData(data)
 //     })
+
 
 function callme(){
   //This promise will resolve when the network call succeeds
@@ -28,7 +29,7 @@ function callme(){
     });
   
   
-  //This promise will resolve when 1 seconds have passed
+  //This promise will resolve when 2 seconds have passed
   var timeOutPromise = new Promise(function(resolve, reject) {
     // 1 Second delay
     setTimeout(resolve, 1000, 'Timeout Done');
@@ -45,7 +46,9 @@ function callme(){
 callme();
 
 function addMarker(data){
-        L.marker([data.lat,data.lng]).addTo(map).bindPopup(`<h2>${"Location: " + data.location}<br>${"Timestamp: " + data.timestamp}</h2>${"Speak English: " + data.doyouspeakenglishfluently}`)
+        var icon = new L.Icon.Default();
+        icon.options.shadowSize = [0,0];
+        L.marker([data.lat,data.lng], {icon : icon}).addTo(map).bindPopup(`<h2>${"Location: " + data.location}<br>${"Timestamp: " + data.timestamp}</h2>${"Speak English: " + data.doyouspeakenglishfluently}`)
         return data.timestamp    
 }
 
@@ -78,9 +81,13 @@ function processData(theData){
     }
     // lets see what the data looks like when its clean!
     console.log(formattedData)
+    // console.log(formattedData.length)
+    // console.log(count)
     // we can actually add functions here too
-    formattedData.forEach(addMarker)
+    formattedData.forEach(addMarker);
 }
+
+
 
 
 // fetch(url)
