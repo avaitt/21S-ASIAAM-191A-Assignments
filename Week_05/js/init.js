@@ -41,7 +41,7 @@ function callme(){
     //Repeat
     callme();
   });
-  }
+}
 
 callme();
 
@@ -88,8 +88,6 @@ function processData(theData){
 }
 
 
-
-
 // fetch(url)
 // 	.then(response => {
 // 		return response.json();
@@ -98,4 +96,3 @@ function processData(theData){
 //         // console.log(data)
 //         processData(data)
 //     })
-
