@@ -46,8 +46,6 @@ fetch(url)
 // callme();
 
 function addMarker(data){
-        // var icon = new L.Icon.Default();
-        // icon.options.shadowSize = [0,0];
         L.marker([data.lat,data.lng]).addTo(map).bindPopup(`<h2>${"Location: " + data.location}<br>${"Timestamp: " + data.timestamp}</h2>${"Speak English: " + data.doyouspeakenglishfluently}`)
         return data.timestamp    
 }
@@ -62,7 +60,6 @@ function addMarker(data){
 //         L.marker([data.lat,data.lng]).addTo(map).bindPopup(`<h2>${data.name}</h2>`);
 //         return data.message;
 // }  
-
 
 function processData(theData){
     const formattedData = [] /* this array will eventually be populated with the contents of the spreadsheet's rows */
