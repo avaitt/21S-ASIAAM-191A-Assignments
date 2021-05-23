@@ -1,5 +1,3 @@
-https://rachan2023.github.io/21S-ASIAAM-191A-Assignments/Week_6/index.html
-
 # Lab Assignment #5 - CSS Grid Layouts
 ### Due 5/13
 Using your lab assignment from `week 5`, touch up your mapplication by creating a layout with CSS Grid and making a cohesive webpage.
