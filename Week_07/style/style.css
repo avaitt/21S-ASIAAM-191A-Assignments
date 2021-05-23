@@ -1,0 +1,73 @@
+body{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-auto-rows: minmax(5px, auto); /* add rows for our header/footer */
+    grid-template-areas: ". header ." "explanation explanation explanation" "contentpanel mappanel survey" "footer . .";
+    font-family: 'Calibri';
+    background-color:lightblue;
+}
+
+
+#explanation{
+    grid-area: explanation;
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+
+} 
+
+#map{
+    height:90vh;
+    grid-area: mappanel;
+    background-color: white;
+
+} 
+
+#survey {
+    grid-area: survey;
+    overflow: hidden;
+    padding-top: 0%;
+    position: relative;
+    background-color: lightblue;
+}
+
+#survey iframe {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+
+#contents{
+    /* this gives the name to our area */
+    grid-area: contentpanel;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: lightblue;
+    margin: 10px;
+
+}
+header{
+    grid-area: header;
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+footer{
+    grid-area: footer;
+}
+
+button{
+    background-color: rgb(220, 221, 238);
+    font-size: 1.3em;
+    border-radius: 4%;
+}
+
+button:hover{
+    background-color: rgb(38, 38, 38);
+    color: white;
+}
