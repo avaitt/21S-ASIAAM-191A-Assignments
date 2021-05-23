@@ -3,7 +3,7 @@ body{
     grid-template-columns: 1fr 1fr 1fr; 
     grid-auto-rows: minmax(5px, auto); /* add rows for our header/footer */
     grid-template-areas: ". header ." "explanation explanation explanation" "contentpanel mappanel survey" "footer . .";
-    font-family: 'Calibri';
+    font-family: 'Trebuchet MS';
     background-color:lightblue;
 }
 
